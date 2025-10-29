@@ -383,6 +383,25 @@ body {
   border-top: 1px solid var(--border-color);
 }
 
+.comments-section h3 {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+/* Giscus 댓글 위젯 스타일링 */
+.giscus {
+  margin-top: 1rem;
+}
+
+/* 댓글 로딩 상태 */
+.comments-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* 푸터 */
 .footer {
   border-top: 1px solid var(--border-color);

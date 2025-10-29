@@ -199,13 +199,19 @@ class PostLoader {
   setupGiscus() {
     console.log("Giscus 댓글 시스템 설정 중...");
 
-    // Giscus 설정 (실제 사용 시 수정 필요)
+    const commentsSection = document.getElementById("giscus-comments");
+    if (!commentsSection) {
+      console.warn("giscus-comments 요소를 찾을 수 없습니다.");
+      return;
+    }
+
+    // Giscus 설정
     const script = document.createElement("script");
     script.src = "https://giscus.app/client.js";
-    script.setAttribute("data-repo", "your-username/your-username.github.io"); // 실제 저장소로 변경
-    script.setAttribute("data-repo-id", "YOUR_REPO_ID"); // 실제 repo-id로 변경
+    script.setAttribute("data-repo", "kris-young-kim/kris-young-kim.github.io");
+    script.setAttribute("data-repo-id", "YOUR_REPO_ID"); // 실제 repo-id로 변경 필요
     script.setAttribute("data-category", "General");
-    script.setAttribute("data-category-id", "YOUR_CATEGORY_ID"); // 실제 category-id로 변경
+    script.setAttribute("data-category-id", "YOUR_CATEGORY_ID"); // 실제 category-id로 변경 필요
     script.setAttribute("data-mapping", "pathname");
     script.setAttribute("data-strict", "0");
     script.setAttribute("data-reactions-enabled", "1");
@@ -216,13 +222,24 @@ class PostLoader {
     script.setAttribute("data-loading", "lazy");
     script.crossOrigin = "anonymous";
 
-    const commentsSection = document.getElementById("giscus-comments");
-    if (commentsSection) {
-      commentsSection.appendChild(script);
+    // 스크립트 로드 에러 처리
+    script.onerror = () => {
+      console.error("Giscus 스크립트 로드 실패");
+      commentsSection.innerHTML = `
+        <div class="comments-loading">
+          <p>❌ 댓글 시스템을 불러올 수 없습니다.</p>
+          <p>GitHub Discussions가 활성화되어 있는지 확인해주세요.</p>
+        </div>
+      `;
+    };
+
+    // 스크립트 로드 성공 처리
+    script.onload = () => {
       console.log("Giscus 스크립트 로드 완료");
-    } else {
-      console.warn("giscus-comments 요소를 찾을 수 없습니다.");
-    }
+    };
+
+    commentsSection.appendChild(script);
+    console.log("Giscus 설정 완료 - 저장소: kris-young-kim/kris-young-kim.github.io");
   }
 
   formatDate(dateString) {
