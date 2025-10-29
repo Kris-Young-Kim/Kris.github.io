@@ -207,20 +207,22 @@ class PostLoader {
 
     // Giscus 설정
     const script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.setAttribute("data-repo", "kris-young-kim/kris-young-kim.github.io");
-    script.setAttribute("data-repo-id", "YOUR_REPO_ID"); // 실제 repo-id로 변경 필요
-    script.setAttribute("data-category", "General");
-    script.setAttribute("data-category-id", "YOUR_CATEGORY_ID"); // 실제 category-id로 변경 필요
-    script.setAttribute("data-mapping", "pathname");
-    script.setAttribute("data-strict", "0");
-    script.setAttribute("data-reactions-enabled", "1");
-    script.setAttribute("data-emit-metadata", "1");
-    script.setAttribute("data-input-position", "bottom");
-    script.setAttribute("data-theme", "preferred_color_scheme");
-    script.setAttribute("data-lang", "ko");
-    script.setAttribute("data-loading", "lazy");
-    script.crossOrigin = "anonymous";
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="Kris-Young-Kim/kris.github.io"
+      data-repo-id="R_kgDOQLIHxw"
+      data-category="General"
+      data-category-id="DIC_kwDOQLIHx84CxMe8"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="ko"
+      crossorigin="anonymous"
+      async
+    ></script>;
 
     // 스크립트 로드 에러 처리
     script.onerror = () => {
@@ -239,7 +241,9 @@ class PostLoader {
     };
 
     commentsSection.appendChild(script);
-    console.log("Giscus 설정 완료 - 저장소: kris-young-kim/kris-young-kim.github.io");
+    console.log(
+      "Giscus 설정 완료 - 저장소: kris-young-kim/kris-young-kim.github.io"
+    );
   }
 
   formatDate(dateString) {
