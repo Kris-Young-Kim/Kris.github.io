@@ -1,0 +1,11 @@
+[
+  {
+    "file": "example.md",
+    "title": "GitHub Pages 블로그 시작하기",
+    "date": "2025-01-29",
+    "tags": ["GitHub", "블로그", "정적사이트"],
+    "category": "Tutorial",
+    "description": "GitHub Pages를 이용한 정적 블로그 구축 방법을 소개합니다.",
+    "excerpt": "안녕하세요! 이 글은 GitHub Pages를 이용해서 정적 블로그를 구축하는 방법에 대해 설명합니다. 이 블로그는 다음과 같은 특징을 가지고 있습니다: 정적 사이트: HTML, CSS, JavaScript만으로 구성 마크다운 지원: .md 파일로 쉽게 글 작성 다크/라이트 모드: 사용자 선호에 따른 테마 전환 검색 기능: 게시글 제목, 내용, 태그로 검색 가능 댓글 시스템: Giscus를 통한 GitHub Discussions 연동 자동 배포: GitHub Actions를 통한 자동 배포..."
+  }
+]
