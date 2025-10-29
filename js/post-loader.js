@@ -207,22 +207,20 @@ class PostLoader {
 
     // Giscus 설정
     const script = document.createElement("script");
-    <script
-      src="https://giscus.app/client.js"
-      data-repo="Kris-Young-Kim/kris.github.io"
-      data-repo-id="R_kgDOQLIHxw"
-      data-category="General"
-      data-category-id="DIC_kwDOQLIHx84CxMe8"
-      data-mapping="pathname"
-      data-strict="0"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="bottom"
-      data-theme="preferred_color_scheme"
-      data-lang="ko"
-      crossorigin="anonymous"
-      async
-    ></script>;
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "Kris-Young-Kim/kris.github.io");
+    script.setAttribute("data-repo-id", "R_kgDOQLIHxw");
+    script.setAttribute("data-category", "General");
+    script.setAttribute("data-category-id", "DIC_kwDOQLIHx84CxMe8");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", "preferred_color_scheme");
+    script.setAttribute("data-lang", "ko");
+    script.crossOrigin = "anonymous";
+    script.async = true;
 
     // 스크립트 로드 에러 처리
     script.onerror = () => {
